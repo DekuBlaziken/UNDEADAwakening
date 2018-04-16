@@ -1,0 +1,31 @@
+#Multiplayer
+game.over = False
+while not game.over:
+    game.processInput()
+    bg2.draw()
+    p1.draw()
+    p2.draw()
+    
+    if story.collidedWith(mouse) and mouse.LeftClick:
+        game.over = True
+        
+#Player1 Control
+    if keys.Pressed[K_UP]:
+        p2.y -= 8
+    if keys.Pressed[K_DOWN]:
+        p2.y += 8
+    if keys.Pressed[K_RIGHT]:
+        p2.x += 8
+    if keys.Pressed[K_LEFT]:
+        p2.x -= 8
+
+#Player2 Control
+    if keys.Pressed[K_w]:
+        p2.y -= 8
+    if keys.Pressed[K_s]:
+        p2.y += 8
+    if keys.Pressed[K_d]:
+        p2.x += 8
+    if keys.Pressed[K_a]:
+        p2.x -= 8
+    game.update(30)
